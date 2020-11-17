@@ -7,11 +7,14 @@ namespace SpaDay.Models
         public string Email { get; set; }
         public string Password { get; set; }
 
+        public DateTime TimeJoined { get; set; }
+
         public User()
         {
+            TimeJoined = DateTime.Now;
         }
 
-        public User(string u, string e, string p)
+        public User(string u, string e, string p): this()
         {
             Username = u;
             Email = e;

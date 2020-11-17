@@ -19,7 +19,8 @@ namespace SpaDay.ViewModels
         [EmailAddress]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="Confirm Password field is required")]
+        [Compare("Password", ErrorMessage = "The two passwords must match!")]
         public string VerifyPassword { get; set; }
     }
 }

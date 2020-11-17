@@ -1,11 +1,13 @@
-﻿<h1>Welcome @ViewBag.name to AK Spa!</h1>
+﻿@using SpaDay.Models;
+@model User;
+<h1>Welcome @Model.Username to AK Spa!</h1>
 
 <p>
     <a asp-controller="Spa" asp-action="index">Spa Services</a>
 </p>
 
 <div>
-    <p>Account details of @ViewBag.name</p>
-    <p>User email id: @ViewBag.email</p>
-    <p>Time joined: @ViewBag.time</p>
+    <p>Account details of @Model.Username</p>
+    <p>User email id: @Model.Email</p>
+    <p>Time joined: @Model.TimeJoined</p>
 </div>
