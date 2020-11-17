@@ -1,42 +1,20 @@
-﻿@{
-}
+﻿<h1>Add User</h1>
 
-<h1>Sign Up Form</h1>
+<form method="post">
+    <div class="form-group">
+        @if(ViewBag.error != null)
+        {
+            <label class="alert-danger">@ViewBag.error</label><br />
+        }
 
-@if (ViewBag.error != null)
-{
-    <p>@ViewBag.error</p>
-}
-
-<form method="post" action="/user">
-    Username:
-    <br>
-    @if (ViewBag.error == null)
-    {
-        <input type="text" name="username" />
-    }
-    else
-    {
-        <input type="text" name="username" value="@ViewBag.userName" />
-    }
-    <br>
-    Email:
-    <br>
-    @if (ViewBag.error == null)
-    {
-        <input type="email" name="email" />
-    }
-    else
-    {
-        <input type="email" name="email" value="@ViewBag.eMail" />
-    }
-    <br>
-    Password:
-    <input type="password" name="password" />
-    <br>
-    Confirm Password:
-    <br>
-    <input type="password" name="verify" />
-    <br>
-    <input type='submit' value='Submit'>
+        <label for="username">Username: </label>
+        <input name="username" value="@ViewBag.name" type="text" class="form-control" /><br />
+        <label for="email">Email Id: </label>
+        <input name="email" value="@ViewBag.email" type="email" class="form-control" /><br />
+        <label for="password">Password: </label>
+        <input name="password" type="password" class="form-control" /><br />
+        <label for="verify">Retype Password: </label>
+        <input name="verify" type="password" class="form-control" /><br />
+        <input type="submit" value="Add User" />
+    </div>
 </form>

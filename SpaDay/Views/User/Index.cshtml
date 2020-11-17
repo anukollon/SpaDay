@@ -1,8 +1,11 @@
-﻿@{
-}
-
-<h1>Welcome to our spa, @ViewBag.user.Username!</h1>
+﻿<h1>Welcome @ViewBag.name to AK Spa!</h1>
 
 <p>
-    <a asp-controller="Spa" asp-action="Index">Select Spa Services</a>
+    <a asp-controller="Spa" asp-action="index">Spa Services</a>
 </p>
+
+<div>
+    <p>Account details of @ViewBag.name</p>
+    <p>User email id: @ViewBag.email</p>
+    <p>Time joined: @ViewBag.time</p>
+</div>
